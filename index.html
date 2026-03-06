@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+
+  <div class="screen active start-screen" id="startScreen">
+    <div class="badge">🧠 Brain Check</div>
+    <h1>Test Your <span>Web Dev</span> Knowledge</h1>
+    <p>10 questions covering HTML, CSS, and JavaScript fundamentals. See how much you know!</p>
+    <div class="info-row">
+      <div class="info"><strong>10</strong> Questions</div>
+      <div class="info"><strong>1 pt</strong> Per Answer</div>
+      <div class="info"><strong>No</strong> Time Limit</div>
+    </div>
+    <button class="btn" onclick="startQuiz()">Start Quiz →</button>
+  </div>
+  
+
+
+  <div class="screen quiz-screen" id="quizScreen">
+    <div class="top-bar">
+      <div class="q-counter">Question <span id="qNum">1</span> of 10</div>
+      <div class="score-badge">Score: <span id="scoreDisplay">0</span></div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="question-card"><p id="questionText"></p></div>
+    <div class="options-grid" id="optionsGrid"></div>
+    <p class="feedback-msg" id="feedbackMsg"></p>
+  </div>
+
+
+  <div class="screen result-screen" id="resultScreen">
+    <div class="result-ring">
+      <svg width="140" height="140" viewBox="0 0 140 140">
+        <circle class="ring-bg" cx="70" cy="70" r="55"/>
+        <circle class="ring-fill" id="ringFill" cx="70" cy="70" r="55"/>
+      </svg>
+      <div class="ring-label" id="ringLabel"></div>
+    </div>
+    <h2 class="result-title" id="resultTitle"></h2>
+    <p class="result-subtitle" id="resultSubtitle"></p>
+    <div class="result-stats">
+      <div class="stat-box">
+        <span class="val green" id="statCorrect"></span>
+        <span class="lbl">Correct</span>
+      </div>
+      <div class="stat-box">
+        <span class="val red" id="statWrong"></span>
+        <span class="lbl">Wrong</span>
+      </div>
+      <div class="stat-box">
+        <span class="val yellow" id="statPct"></span>
+        <span class="lbl">Score</span>
+      </div>
+    </div>
+    <button class="btn btn-outline" onclick="location.reload()">Try Again</button>
+    <button class="btn" onclick="location.reload()">New Game</button>
+  </div>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
